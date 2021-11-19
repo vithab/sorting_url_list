@@ -26,6 +26,19 @@ p (strings.map! do |arr|
     arr.each_slice(2).to_a
   end)
 
+uniq_urls = []
 
+strings.each do |arr|
+  arr.each do |arr|
+    # p arr
+    if arr[0].include?('https:') || arr[0].include?('http:')
+      uniq_urls << arr.join('//')
+    else
+      next
+    end
+  end
+end
 
-p strings.count
+p uniq_urls.uniq!
+uniq_urls.each { |url| p url }
+p uniq_urls.count
