@@ -5,7 +5,11 @@ urls = strings.map { |string| string.split(', ') }.flatten.uniq.sort
 
 puts '='*40
 
-urls.each { |url| p url }
+urls.each do |url| 
+  File.write("./output_files/urls.txt", "#{url}\n", mode: 'a')
+  p url
+end
+
 
 puts '='*40
 puts "Всего уникальных урлов: #{urls.count}"
